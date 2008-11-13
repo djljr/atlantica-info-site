@@ -1,0 +1,14 @@
+<h1>An error occurred</h1>
+<h2><?php echo $this->message ?>
+
+<?php if('development' == $this->env): ?>
+	<h3>Exception information:</h3>
+	<p>
+		<b>Message</b><?php echo $this->exception->getMessage() ?>
+	</p>
+	<h3>Stack Trace:</h3>
+	<pre><?php echo $this->exception->getTraceAsString() ?>
+	
+	<h3>Request Parameters:</h3>
+	<pre><?php echo var_dump($this->request->getParams()) ?></pre>
+<?php endif ?>
