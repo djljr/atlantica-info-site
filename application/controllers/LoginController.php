@@ -8,7 +8,7 @@ class LoginController extends Zend_Controller_Action
 	{
 		$request = $this->getRequest();
 		$form = $this->_getLoginForm();
-		
+		$this->view->users = $this->_getModel()->fetchEntries();
 		if($this->getRequest()->isPost())
 		{
 			if($form->isValid($request->getPost()))

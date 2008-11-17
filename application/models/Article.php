@@ -1,6 +1,6 @@
 <?php
 
-class Model_User
+class Model_Article
 {
 	protected $_table;
 	
@@ -8,8 +8,8 @@ class Model_User
 	{
 		if (null === $this->_table)
 		{
-			require_once APPLICATION_PATH . '/models/DbTable/UserDao.php';
-			$this->_table = new Model_DbTable_User;
+			require_once APPLICATION_PATH . '/models/DbTable/ArticleDao.php';
+			$this->_table = new Model_DbTable_Article;
 		}
 		return $this->_table;
 	}
