@@ -1,21 +1,141 @@
-<?php echo $this->doctype() ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Atlantica . Erenda</title>
-	<?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head><title>Atlantica index</title>
+
+<script language="javascript">
+
+function toggle(elementid) {
+
+  var itemInfo = document.getElementById(elementid);
+      
+ if(itemInfo.style.display == 'none') {
+          itemInfo.style.display='inline';
+        }
+        else {
+          itemInfo.style.display = 'none';
+        }
+      }
+</script>
+
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="pngfix.js"></script>
+<![endif]-->
+
+<?php echo $this->headLink()->appendStylesheet('/css/mainstyle.css') ?>
+
+
 </head>
 <body>
-	<div id="header" style="background-color: #eee; height: 30px;">
-		<div id="header-logo" style="float: left">
-			<b>Atlantica . Erenda</b>
-		</div>
-		<div id="header-navigation" style="float: right">
-			<a href="<?php echo $this->url(array('controller'=>'login'), 'default', true) ?>">Login</a>
-		</div>
-	</div>
-	
-	<?php echo $this->layout()->content ?>
-	
-</body>
-</html>
+
+
+
+
+<div id ="pageheader"> <div id="top"><div id="topmenu">
+<a href=""><img src="/images/common/top_blank.gif" width="70" border="0"></a>
+<a href=""><img id="top_home" src="/images/common/top_homeA.png" border="0" onMouseover="document.top_home.src='/images/common/top_homeB.png';" onMouseout="document.top_home.src='/images/common/top_homeA.png';"></a>
+<a href=""><img id="top_links" src="/images/common/top_linksA.png" border="0" onMouseover="document.top_links.src='/images/common/top_linksB.png';" onMouseout="document.top_links.src='/images/common/top_linksA.png';"></a>
+<a href=""><img id="top_contact" src="/images/common/top_contactA.png" border="0" onMouseover="document.top_contact.src='/images/common/top_contactB.png';" onMouseout="document.top_contact.src='/images/common/top_contactA.png';"></a>
+<a href=""><img id="top_forum" src="/images/common/top_forumA.png" border="0" onMouseover="document.top_forum.src='/images/common/top_forumB.png';" onMouseout="document.top_forum.src='/images/common/top_forumA.png';"></a>
+<a href=""><img id="top_about" src="/images/common/top_aboutA.png" border="0" onMouseover="document.top_about.src='/images/common/top_aboutB.png';" onMouseout="document.top_about.src='/images/common/top_aboutA.png';"></a>
+
+</div></div></div><br>
+
+<div id="sidemenu"><span onClick="javascript:toggle('news');"><img src="/images/common/menu_news.png"> </span><br>
+<div id="news" name="news">
+<a href="">Front Page News</a><br>
+<a href="">Archived News</a><br>
+<a href="">Report a News Story</a><br>
+<a href="">Server Status</a><br>
+<a href="">Planned updates and downtimes</a><br>
+</div>
+<p>
+
+
+<span onClick="javascript:toggle('game');"><img src="/images/common/menu_game.png"></span><br>
+<div id="game" name="game">
+<a href="">Classes</a><br>
+<a href="">Mercenaries</a><br>
+<a href="">Skills</a><br>
+<a href="">Lvls<br>
+<a href="">Quest NPC</a><br>
+<a href="">Merc title</a><br>
+<a href="">Merc quests</a><br>
+</div>
+<p>
+
+<span onClick="javascript:toggle('npcinfo');"><img src="/images/common/menu_npc.png"></span><br>
+<div id="npcinfo">
+<a href="">Livingston</a><br>
+<a href="">Goncourt</a><br>
+<a href="">Hui Chao</a>  <br>
+<a href="">Howard  </a>
+</div>
+<p>
+<span onClick="javascript:toggle('quests'); "onClick="javascript:toggle('quests');"><img src="/images/common/menu_quests.png"></span><br>
+<div id="quests">
+<a href="">Main: </a><br>
+<a href="">Sidequests:</a><br>
+</div>
+<p>
+<span onClick="javascript:toggle('iteminfo');"><img src="/images/common/menu_item.png"><img src="/images/common/menu_items.png"></span><br>
+<div id="iteminfo">
+<a href="">Equipment Info</a><br>
+<a href="">Other Stuff</a> <br>
+<a href="">Enchanting FAQ</a><br>
+<a href="">Enhancing</a><br>
+<a href="">Material Boxes</a><br>
+</div>
+<p>
+<span onClick="javascript:toggle('location');"><img src="/images/common/menu_locations.png"></span><br><div id="location">
+<a href="">Dungeons</a><br>
+<a href="">Maps</a><br>
+<a href="">Towns</a><p>
+</div>
+<p>
+<span onClick="javascript:toggle('monsters');"><img src="/images/common/menu_monsters.png"></span><br><div id="monsters">
+<a href="">Special Mobs</a><br>
+<a href="">Monster Info FAQ</a><br>
+</div>
+<p>
+<span onClick="javascript:toggle('rome');"><img src="/images/common/menu_rome.png"></span><br><div id="rome">
+<a href="">Vulcanus </a><br>
+<a href="">Gambler De Mere</a><br>
+<a href="">Pointry</a> <br>
+<a href="">Sothesby </a><br>
+<a href="">Maximus</a> <br>
+<a href="">Mischievous Witch</a> <p>
+</div>
+<p>
+
+
+<span onClick="javascript:toggle('crafting');"><img src="/images/common/menu_crafting.png"></span><br><div id="crafting">
+Crafting FAQ<br>
+Crafting Levels<p>
+</div>
+<p>
+<span onClick="javascript:toggle('guilds');"><img src="/images/common/menu_guilds.png"></span><br><div id="guilds">
+Guild FAQ <br>
+Guild List by Server<br>
+Links
+</div>
+<p>
+<span onClick="javascript:toggle('freeleague');"><img src="/images/common/menu_freeleague.png"></span><br>
+<div id="freeleague">
+ Free League Formations<br>
+Free League FAQ<p>
+</div>
+<p>
+<span onClick="javascript:toggle('market');"><img src="/images/common/menu_market.png"></span><br><div id="market">
+Products and Profits<br>
+Supply and Demand basics</div> 
+<p>
+
+<span onClick="javascript:toggle('strat');"><img src="/images/common/menu_strategies.png"></span><br><div id="strat">
+Mercenaries<br>
+Did you know…<br></div>
+</div></div><div id="content">
+<?php echo $this->layout()->content ?>
+
+</div>
+</body></html>
+

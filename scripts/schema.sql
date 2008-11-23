@@ -1,4 +1,3 @@
-drop table user;
 
 create table user (
 	id serial,
