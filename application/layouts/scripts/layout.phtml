@@ -21,9 +21,8 @@ function toggle(elementid) {
 <script defer type="text/javascript" src="pngfix.js"></script>
 <![endif]-->
 
-<?php echo $this->headLink()->appendStylesheet('/css/mainstyle.css') ?>
-
-
+<?php $this->headLink()->prependStylesheet('/css/mainstyle.css'); ?>
+<?php echo $this->headLink(); ?>
 </head>
 <body>
 
