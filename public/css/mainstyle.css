@@ -81,7 +81,7 @@ margin: 0px 0px 0px 0px;
 <!-- Div styles for Side Menu -->  
 #news {
 
-display:none;
+display:inline;
 
 }
 
@@ -156,3 +156,18 @@ display:none;
 }
 
 <!-- End Div styles for Side Menu -->  
+
+<!--Styles for Merc Pages --!>
+#merc_wrapper {
+background-image:url(/images/common/header.png);
+	width:100;
+	border:thick blue;
+}
+	{
+#merc_stats{
+
+	
+}
+#merc_info{
+	
+}
