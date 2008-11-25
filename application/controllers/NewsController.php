@@ -15,7 +15,7 @@ class NewsController extends Zend_Controller_Action
 	{
 		if (null === $this->_model)
 		{
-			require_once APPLICATION_PATH . '/models/News.php';
+			require_once APPLICATION_PATH . '/models/NewsDao.php';
 			$this->_model = new Model_News;
 		}
 		return $this->_model;

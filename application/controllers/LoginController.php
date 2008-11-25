@@ -25,7 +25,7 @@ class LoginController extends Zend_Controller_Action
 	{
 		if (null === $this->_model)
 		{
-			require_once APPLICATION_PATH . '/models/User.php';
+			require_once APPLICATION_PATH . '/models/UserDao.php';
 			$this->_model = new Model_User;
 		}
 		return $this->_model;

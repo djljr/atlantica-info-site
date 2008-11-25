@@ -2,9 +2,11 @@
 	defined('APPLICATION_PATH') or define('APPLICATION_PATH', dirname(__FILE__));
 	defined('APPLICATION_ENVIRONMENT') or define('APPLICATION_ENVIRONMENT', 'development');
 
+	error_reporting(E_ALL|E_STRICT);
+	
 	// setup controller
 	$frontController = Zend_Controller_Front::getInstance();
-	//$frontController->throwExceptions(true);
+	$frontController->throwExceptions(true);
 	$frontController->setControllerDirectory(APPLICATION_PATH . '/controllers');
 	$frontController->setParam('env', APPLICATION_ENVIRONMENT);
 	

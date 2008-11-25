@@ -10,4 +10,6 @@ Aliquam et lectus ut ante sodales gravida. Nam mauris turpis, mollis vulputate, 
 Vestibulum eu felis eget metus sollicitudin varius. Duis nibh. Sed risus. Suspendisse nec mi eget enim feugiat tempor. Mauris neque. Fusce diam nisl, volutpat quis, fringilla sit amet, lacinia pellentesque, erat. Mauris malesuada accumsan ante. Pellentesque vel lorem. Suspendisse potenti. Curabitur a nisl et augue egestas semper. Suspendisse in nulla. Nullam eros est, dictum id, porttitor nec, convallis eget, augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 
 Donec congue tristique nulla. Sed justo. Morbi luctus, ante a pellentesque lobortis, pede metus cursus erat, sit amet suscipit erat orci non urna. Donec venenatis eleifend libero. Sed accumsan volutpat lectus. Nam eleifend. Donec semper ultricies justo. In auctor lacus non massa fermentum ullamcorper. Suspendisse pulvinar metus in ligula. Sed tempor eros et nunc. Maecenas nec purus. Nunc porta enim nec neque. Praesent quis odio at nulla vulputate rhoncus. Fusce tristique mollis justo.',
-'2008-11-16 18:14:00')
+'2008-11-16 18:14:00');
+
+insert into mercenary values ('Swordsman', 340, 240, 400, 130, 250, 125);

@@ -1,6 +1,6 @@
 <?php
 
-class Model_Article
+class Model_News
 {
 	protected $_table;
 	
@@ -8,8 +8,8 @@ class Model_Article
 	{
 		if (null === $this->_table)
 		{
-			require_once APPLICATION_PATH . '/models/DbTable/ArticleDao.php';
-			$this->_table = new Model_DbTable_Article;
+			require_once APPLICATION_PATH . '/models/DbTable/NewsDbTable.php';
+			$this->_table = new Model_DbTable_News;
 		}
 		return $this->_table;
 	}
@@ -28,6 +28,12 @@ class Model_Article
 		return $table->insert($data);
 	}
 	
+	public function fetchTopStories($numToFetch)
+	{
+		$table = $this->getTable();
+		$select = $table->select()->order('created_date desc')->limit($numToFetch,0);
+	}
+	
 	public function fetchEntries()
 	{
 		return $this->getTable()->fetchAll('1')->toArray();
@@ -36,7 +42,6 @@ class Model_Article
 	public function fetchEntry($id)
 	{
 		$table = $this->getTable();
-		$select = $table->select()->where('id=?', $id);
-		return $table->fetchRow($select)->toArray();
+		return $table->find($id);
 	}
 }

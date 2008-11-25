@@ -8,7 +8,7 @@ class Model_User
 	{
 		if (null === $this->_table)
 		{
-			require_once APPLICATION_PATH . '/models/DbTable/UserDao.php';
+			require_once APPLICATION_PATH . '/models/DbTable/UserDbTable.php';
 			$this->_table = new Model_DbTable_User;
 		}
 		return $this->_table;

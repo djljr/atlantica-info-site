@@ -1,3 +1,7 @@
+drop table if exists user;
+drop table if exists news;
+drop table if exists article;
+drop table if exists mercenary;
 
 create table user (
 	id serial,
@@ -19,4 +23,14 @@ create table article (
 	title varchar(100),
 	content longtext,
 	created_date timestamp
+);
+
+create table mercenary (
+	name varchar(50) primary key not null,
+	str integer,
+	dex integer,
+	def integer,
+	int integer,
+	vit integer,
+	mdef integer
 );
