@@ -1,5 +1,5 @@
 
-
+ 
 BODY {
 background: #000000;
 margin: 0px 0px 0px 0px;
@@ -78,7 +78,7 @@ color:black;
 margin: 0px 0px 0px 0px;
 }
 
-<!-- Div styles for Side Menu -->  
+/* Styles for Sidemenu Pages */
 #news {
 
 display:inline;
@@ -155,4 +155,3 @@ display:none;
 
 }
 
-<!-- End Div styles for Side Menu -->  
