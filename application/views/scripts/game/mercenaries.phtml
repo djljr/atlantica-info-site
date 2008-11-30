@@ -1,12 +1,12 @@
 <?php $this->headlink()->appendStylesheet("/css/merc.css"); ?>
 
-<div id="merc_wrapper">
-
 <h1><?php echo $this->escape($this->title); ?></h1>
+<ul>
 <?php foreach ($this->mercenaries as $merc) {?>
-<?php print_r($merc); ?>
-<div id="merc_stats"><img src="/images/gamepictures/merc_sword.png" style="float:left;"></div>
-Name<br>Stats<br>Skills</div>
-<p>&nbsp;</p><div id="merc_info">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque massa lorem, scelerisque a, euismod ut, laoreet porta, lacus. Aliquam ornare neque quis libero. Fusce sit amet diam. Donec sodales tincidunt nibh. Quisque non turpis. Mauris faucibus, nulla vel aliquam ultricies, elit lorem vehicula augue, ac porttitor metus arcu ac augue. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis dui felis, bibendum adipiscing, tincidunt ac, sollicitudin quis, ipsum. Aliquam erat volutpat. Donec pretium. Pellentesque viverra. Morbi odio. Pellentesque nec turpis. Ut tincidunt quam. Cras vel orci. Curabitur suscipit enim vel ipsum interdum dapibus. Nunc erat erat, sagittis in, consectetuer eget, feugiat vitae, nibh. Etiam aliquam lectus ut urna. </div>
-</div>
+<li>
+	<a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>/<?php echo $merc['id']?>">
+		<?php echo $merc['name']?>
+	</a>
+</li>
 <?php }?>
+</ul>
