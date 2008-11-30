@@ -22,7 +22,12 @@ class Model_Mercenary
 	public function fetchMercenary($name)
 	{
 		$table = $this->getTable();
-		return $table->find($name)->current()->toArray();
+		
+		$merc = $table->find($name)->current();
+		if($merc)
+			return $merc->toArray();
+		else
+			return null;
 	}
 	
 	public function fetchBaseClassMercenaries()
