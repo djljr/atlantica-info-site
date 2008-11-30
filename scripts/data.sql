@@ -12,4 +12,5 @@ Vestibulum eu felis eget metus sollicitudin varius. Duis nibh. Sed risus. Suspen
 Donec congue tristique nulla. Sed justo. Morbi luctus, ante a pellentesque lobortis, pede metus cursus erat, sit amet suscipit erat orci non urna. Donec venenatis eleifend libero. Sed accumsan volutpat lectus. Nam eleifend. Donec semper ultricies justo. In auctor lacus non massa fermentum ullamcorper. Suspendisse pulvinar metus in ligula. Sed tempor eros et nunc. Maecenas nec purus. Nunc porta enim nec neque. Praesent quis odio at nulla vulputate rhoncus. Fusce tristique mollis justo.',
 '2008-11-16 18:14:00');
 
-insert into mercenary values ('Swordsman', 340, 240, 400, 130, 250, 125);
+insert into mercenary values ('swordsman', 'Swordsman', 340, 240, 400, 130, 250, 125, null);
+insert into mercenary values ('viking', 'Viking', 330, 110, 280, 140, 310, -50, null);

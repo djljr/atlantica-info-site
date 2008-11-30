@@ -9,7 +9,17 @@ class GameController extends Zend_Controller_Action
 		$mercenaryDao = $this->_getModel();
 
 		$this->view->title = "Mercenary Information";
-		$this->view->merc = $mercenaryDao->fetchMercenary("Swordsman");
+		$this->view->mercenaries = $mercenaryDao->fetchBaseClassMercenaries();
+	}
+	
+	public function mercenaryAction()
+	{
+		$mercenaryDao = $this->_getModel();
+		$merc = $this->_getParam("merc");
+		if($merc)
+		{
+			$this->view->merc = $mercenaryDao->fetchMercenary($merc);
+		}
 	}
 	
 	protected function _getModel()

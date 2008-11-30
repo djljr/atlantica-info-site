@@ -24,4 +24,11 @@ class Model_Mercenary
 		$table = $this->getTable();
 		return $table->find($name)->current()->toArray();
 	}
+	
+	public function fetchBaseClassMercenaries()
+	{
+		$table = $this->getTable();
+		$select = $table->select()->where('base is null');
+		return $table->fetchAll($select)->toArray();
+	}
 }

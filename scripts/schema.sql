@@ -26,11 +26,13 @@ create table article (
 );
 
 create table mercenary (
-	name varchar(50) primary key not null,
+	id varchar(50) primary key not null,
+	name varchar(50),
 	str integer,
 	dex integer,
 	def integer,
 	int integer,
 	vit integer,
-	mdef integer
+	mdef integer,
+	base varchar(50) references mercenary(id)
 );

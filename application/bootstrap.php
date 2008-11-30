@@ -26,4 +26,14 @@
 	$registry->configuration = $configuration;
 	$registry->dbAdapter = $dbAdapter;
 	
-	unset($frontController, $view, $configuration, $dbAdapter, $registry);
+	//Custom routes
+	$router = $frontController->getRouter();
+	$router->addRoute('mercenary', new Zend_Controller_Router_Route(
+    	'game/mercenaries/:merc',
+    	array(
+    	    'controller' => 'game',
+	      	'action'     => 'mercenary'
+    	)
+	));
+	
+	unset($frontController, $view, $configuration, $dbAdapter, $registry, $router);
