@@ -1,12 +1,17 @@
 <?php $this->headlink()->appendStylesheet("/css/merc.css"); ?>
-
 <h1><?php echo $this->escape($this->title); ?></h1>
 <ul>
-<?php foreach ($this->mercenaries as $merc) {?>
-<li>
-	<a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>/<?php echo $merc['id']?>">
-		<?php echo $merc['name']?>
-	</a>
-</li>
+	<?php foreach ($this->mercenaries as $group => $mercs) {?>
+	<li> <?php echo $this->groups[$group] ?>
+		<ul>
+		<?php foreach($mercs as $merc) {?>
+			<li>
+				<a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>/<?php echo $merc['id']?>">
+					<?php echo $merc['name']?>
+				</a>
+			</li>
+		<?php }?>
+		</ul>
+	</li>
 <?php }?>
 </ul>

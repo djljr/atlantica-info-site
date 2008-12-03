@@ -34,5 +34,11 @@ create table mercenary (
 	int integer,
 	vit integer,
 	mdef integer,
-	base varchar(50) references mercenary(id)
+	base varchar(50) references mercenary(id),
+	"group" varchar(50) references mercenary_group(id)
 );
+
+create table mercenary_group (
+	id varchar(50),
+	name varchar(50)
+)
