@@ -30,7 +30,7 @@ function toggle(elementid) {
 <body>
 
 
-
+<div id="pagewrapper">
 
 <div id ="pageheader"> <div id="top"><div id="topmenu">
 <a href=""><img src="/images/common/top_blank.gif" width="70" border="0"></a>
@@ -39,7 +39,6 @@ function toggle(elementid) {
 <a href=""><img id="top_contact" src="/images/common/top_contactA.png" border="0" onMouseover="document.top_contact.src='/images/common/top_contactB.png';" onMouseout="document.top_contact.src='/images/common/top_contactA.png';"></a>
 <a href=""><img id="top_forum" src="/images/common/top_forumA.png" border="0" onMouseover="document.top_forum.src='/images/common/top_forumB.png';" onMouseout="document.top_forum.src='/images/common/top_forumA.png';"></a>
 <a href=""><img id="top_about" src="/images/common/top_aboutA.png" border="0" onMouseover="document.top_about.src='/images/common/top_aboutB.png';" onMouseout="document.top_about.src='/images/common/top_aboutA.png';"></a>
-
 </div></div></div><br>
 
 <div id="sidemenu"><span onClick="javascript:toggle('news');"><img src="/images/common/menu_news.png"> </span><br>
@@ -135,9 +134,12 @@ Supply and Demand basics</div>
 <span onClick="javascript:toggle('strat');"><img src="/images/common/menu_strategies.png"></span><br><div id="strat">
 Mercenaries<br>
 Did you know…<br></div>
-</div></div><div id="content">
+</div>
+
+<div id="content">
 <?php echo $this->layout()->content ?>
 
+</div>
 </div>
 </body></html>
 

@@ -2,6 +2,7 @@ drop table if exists user;
 drop table if exists news;
 drop table if exists article;
 drop table if exists mercenary;
+drop table if exists mercenary_group;
 
 create table user (
 	id serial,
