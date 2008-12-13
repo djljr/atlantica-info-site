@@ -2,32 +2,8 @@
 <html>
 <head><title>Atlantica index</title>
 
-<style type="text/css">
-    .invisible { display: none; }
-</style>
-
 <script type="text/javascript" src="/js/Mochikit/Mochikit.js"></script>
-<script language="javascript">
-
-    function toggleVisible(elem) {
-        toggleElementClass("invisible", elem);
-    }
-
-    function makeVisible(elem) {
-        removeElementClass(elem, "invisible");
-    }
-
-    function makeInvisible(elem) {
-        addElementClass(elem, "invisible");
-    }
-
-    function isVisible(elem) {
-        // you may also want to check for
-        // getElement(elem).style.display == "none"
-        return !hasElementClass(elem, "invisible");
-    };
-
-</script>
+<script type="text/javascript" src="/js/erenda_lib.js"></script>
 
 <!--[if lt IE 7.]>
 <script defer type="text/javascript" src="pngfix.js"></script>
