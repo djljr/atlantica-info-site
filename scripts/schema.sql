@@ -3,6 +3,9 @@ drop table if exists news;
 drop table if exists article;
 drop table if exists mercenary;
 drop table if exists mercenary_group;
+drop table if exists resource;
+drop table if exists craftable;
+drop table if exists skill;
 
 create table user (
 	id serial,
@@ -42,4 +45,26 @@ create table mercenary (
 create table mercenary_group (
 	id varchar(50),
 	name varchar(50)
-)
+);
+
+create table resource (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name varchar(50),
+	fixedprice integer
+);
+create unique index "ix_resource" on "resource" ("name");
+
+create table craftable (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name varchar(50),
+	skill varchar(50) references skill(name),
+	experience integer,
+	minlevel integer,
+	batchsize integer,
+	workload integer
+);
+
+create table skill (
+	id varchar(50) primary key not null,
+	name varchar(50) 
+);

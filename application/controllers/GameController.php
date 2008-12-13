@@ -28,9 +28,9 @@ class GameController extends Zend_Controller_Action
 		if (null === $this->_mercenaryDao)
 		{
 			require_once APPLICATION_PATH . '/models/MercenaryDao.php';
-			$this->_model = new Model_Mercenary;
+			$this->_mercenaryDao = new Model_Mercenary;
 		}
-		return $this->_model;
+		return $this->_mercenaryDao;
 	}	
 	
 }

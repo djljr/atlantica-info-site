@@ -1,0 +1,4 @@
+<?php 
+foreach ($this->resources as $resource) { 
+	echo 'insert into resource (id, name, fixedprice) values (' . $resource['id'] . ',\'' . str_replace('\'', '\'\'', $resource['name']) . '\',' . $resource['fixedprice'] . ');<br />';
+} ?>

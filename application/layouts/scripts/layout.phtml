@@ -111,7 +111,9 @@ function toggle(elementid) {
 
 <span onClick="javascript:toggle('crafting');"><img src="/images/common/menu_crafting.png"></span><br><div id="crafting">
 Crafting FAQ<br>
-Crafting Levels<p>
+Crafting Levels<br>
+<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'formulas'), 'default', true) ?>">Formulas</a><br>
+<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resources'), 'default', true) ?>">Resources</a><br>
 </div>
 <p>
 <span onClick="javascript:toggle('guilds');"><img src="/images/common/menu_guilds.png"></span><br><div id="guilds">
