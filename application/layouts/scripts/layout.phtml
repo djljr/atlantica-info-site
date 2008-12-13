@@ -2,21 +2,30 @@
 <html>
 <head><title>Atlantica index</title>
 
+<style type="text/css">
+    .invisible { display: none; }
+</style>
+
+<script type="text/javascript" src="/js/Mochikit/Mochikit.js"></script>
 <script language="javascript">
 
-function toggle(elementid) {
+    function toggleVisible(elem) {
+        toggleElementClass("invisible", elem);
+    }
 
-  var itemInfo = document.getElementById(elementid);
-      
- if(itemInfo.style.display == 'none') {
-          itemInfo.style.display='inline';
-        }
-        else {
-          itemInfo.style.display = 'none';
-        }
-      }
+    function makeVisible(elem) {
+        removeElementClass(elem, "invisible");
+    }
 
+    function makeInvisible(elem) {
+        addElementClass(elem, "invisible");
+    }
 
+    function isVisible(elem) {
+        // you may also want to check for
+        // getElement(elem).style.display == "none"
+        return !hasElementClass(elem, "invisible");
+    };
 
 </script>
 
@@ -41,7 +50,7 @@ function toggle(elementid) {
 <a href=""><img id="top_about" src="/images/common/top_aboutA.png" border="0" onMouseover="document.top_about.src='/images/common/top_aboutB.png';" onMouseout="document.top_about.src='/images/common/top_aboutA.png';"></a>
 </div></div></div><br>
 
-<div id="sidemenu"><span onClick="javascript:toggle('news');"><img src="/images/common/menu_news.png"> </span><br>
+<div id="sidemenu"><span onClick="javascript:toggleVisible('news');"><img src="/images/common/menu_news.png"> </span><br>
 <div id="news" name="news">
 <a href="">Front Page News</a><br>
 <a href="">Archived News</a><br>
@@ -52,8 +61,8 @@ function toggle(elementid) {
 <p>
 
 
-<span onClick="javascript:toggle('game');"><img src="/images/common/menu_game.png"></span><br>
-<div id="game" name="game">
+<span onClick="javascript:toggleVisible('game');"><img src="/images/common/menu_game.png"></span><br>
+<div id="game" name="game" class="invisible">
 <a href="">Classes</a><br>
 <a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>">Mercenaries</a><br>
 <a href="">Skills</a><br>
@@ -64,22 +73,22 @@ function toggle(elementid) {
 </div>
 <p>
 
-<span onClick="javascript:toggle('npcinfo');"><img src="/images/common/menu_npc.png"></span><br>
-<div id="npcinfo">
+<span onClick="javascript:toggleVisible('npcinfo');"><img src="/images/common/menu_npc.png"></span><br>
+<div id="npcinfo" class="invisible">
 <a href="">Livingston</a><br>
 <a href="">Goncourt</a><br>
 <a href="">Hui Chao</a>  <br>
 <a href="">Howard  </a>
 </div>
 <p>
-<span onClick="javascript:toggle('quests'); "onClick="javascript:toggle('quests');"><img src="/images/common/menu_quests.png"></span><br>
-<div id="quests">
+<span onClick="javascript:toggleVisible('quests'); "onClick="javascript:toggleVisible('quests');"><img src="/images/common/menu_quests.png"></span><br>
+<div id="quests" class="invisible">
 <a href="">Main: </a><br>
 <a href="">Sidequests:</a><br>
 </div>
 <p>
-<span onClick="javascript:toggle('iteminfo');"><img src="/images/common/menu_item.png"><img src="/images/common/menu_items.png"></span><br>
-<div id="iteminfo">
+<span onClick="javascript:toggleVisible('iteminfo');"><img src="/images/common/menu_item.png"><img src="/images/common/menu_items.png"></span><br>
+<div id="iteminfo" class="invisible">
 <a href="">Equipment Info</a><br>
 <a href="">Other Stuff</a> <br>
 <a href="">Enchanting FAQ</a><br>
@@ -87,18 +96,21 @@ function toggle(elementid) {
 <a href="">Material Boxes</a><br>
 </div>
 <p>
-<span onClick="javascript:toggle('location');"><img src="/images/common/menu_locations.png"></span><br><div id="location">
+<span onClick="javascript:toggleVisible('location');"><img src="/images/common/menu_locations.png"></span><br>
+<div id="location" class="invisible">
 <a href="">Dungeons</a><br>
 <a href="">Maps</a><br>
 <a href="">Towns</a><p>
 </div>
 <p>
-<span onClick="javascript:toggle('monsters');"><img src="/images/common/menu_monsters.png"></span><br><div id="monsters">
+<span onClick="javascript:toggleVisible('monsters');"><img src="/images/common/menu_monsters.png"></span><br>
+<div id="monsters" class="invisible">
 <a href="">Special Mobs</a><br>
 <a href="">Monster Info FAQ</a><br>
 </div>
 <p>
-<span onClick="javascript:toggle('rome');"><img src="/images/common/menu_rome.png"></span><br><div id="rome">
+<span onClick="javascript:toggleVisible('rome');"><img src="/images/common/menu_rome.png"></span><br>
+<div id="rome" class="invisible">
 <a href="">Vulcanus </a><br>
 <a href="">Gambler De Mere</a><br>
 <a href="">Pointry</a> <br>
@@ -109,31 +121,35 @@ function toggle(elementid) {
 <p>
 
 
-<span onClick="javascript:toggle('crafting');"><img src="/images/common/menu_crafting.png"></span><br><div id="crafting">
+<span onClick="javascript:toggleVisible('crafting');"><img src="/images/common/menu_crafting.png"></span><br>
+<div id="crafting" class="invisible">
 Crafting FAQ<br>
 Crafting Levels<br>
 <a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'formulas'), 'default', true) ?>">Formulas</a><br>
 <a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resources'), 'default', true) ?>">Resources</a><br>
 </div>
 <p>
-<span onClick="javascript:toggle('guilds');"><img src="/images/common/menu_guilds.png"></span><br><div id="guilds">
+<span onClick="javascript:toggleVisible('guilds');"><img src="/images/common/menu_guilds.png"></span><br>
+<div id="guilds" class="invisible">
 Guild FAQ <br>
 Guild List by Server<br>
 Links
 </div>
 <p>
-<span onClick="javascript:toggle('freeleague');"><img src="/images/common/menu_freeleague.png"></span><br>
-<div id="freeleague">
+<span onClick="javascript:toggleVisible('freeleague');"><img src="/images/common/menu_freeleague.png"></span><br>
+<div id="freeleague" class="invisible">
  Free League Formations<br>
 Free League FAQ<p>
 </div>
 <p>
-<span onClick="javascript:toggle('market');"><img src="/images/common/menu_market.png"></span><br><div id="market">
+<span onClick="javascript:toggleVisible('market');"><img src="/images/common/menu_market.png"></span><br>
+<div id="market" class="invisible">
 Products and Profits<br>
 Supply and Demand basics</div> 
 <p>
 
-<span onClick="javascript:toggle('strat');"><img src="/images/common/menu_strategies.png"></span><br><div id="strat">
+<span onClick="javascript:toggleVisible('strat');"><img src="/images/common/menu_strategies.png"></span><br>
+<div id="strat" class="invisible">
 Mercenaries<br>
 Did you know…<br></div>
 </div>

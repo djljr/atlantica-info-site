@@ -50,9 +50,15 @@ create table mercenary_group (
 create table resource (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name varchar(50),
-	fixedprice integer
+	fixedprice integer,
+	category varchar(50) references resource_category(name)
 );
 create unique index "ix_resource" on "resource" ("name");
+
+create table resource_category (
+	id varchar(50) primary key not null,
+	name varchar(50)
+);
 
 create table craftable (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,

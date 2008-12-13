@@ -75,6 +75,32 @@ insert into skill values ('sewing', 'Sewing');
 insert into skill values ('scroll', 'Scroll');
 insert into skill values ('quest', 'Quest');
 
+insert into resource_category ('action', 'Action');
+insert into resource_category ('armor', 'Armor');
+insert into resource_category ('arrow', 'Arrow');
+insert into resource_category ('axe', 'Axe');
+insert into resource_category ('book', 'Book');
+insert into resource_category ('bow', 'Bow');
+insert into resource_category ('box', 'Box');
+insert into resource_category ('building', 'Building');
+insert into resource_category ('bullet', 'Bullet');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannonball', 'Cannonball');
+insert into resource_category ('charm', 'Charm');
+insert into resource_category ('crystal', 'Crystal');
+insert into resource_category ('culturalasset', 'Cultural Asset');
+insert into resource_category ('element', 'Element');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+insert into resource_category ('cannon', 'Cannon');
+
 insert into resource (id, name, fixedprice) values (1,'Copper Flakes',100);
 insert into resource (id, name, fixedprice) values (2,'Maple',100);
 insert into resource (id, name, fixedprice) values (3,'Coral',100);
@@ -113,4 +139,3 @@ insert into resource (id, name, fixedprice) values (29,'Coal',1000);
 --insert into craftable (name, skill, experience, minlevel, batchsize, workload) values ('Blood Knight Axe', 'axe', ?, 28, 1, 125200);
 --insert into craftable (name, skill, experience, minlevel, batchsize, workload) values ('Anu Warrior Axe', 'axe', ?, 32, 1, 191400);
 --insert into craftable (name, skill, experience, minlevel, batchsize, workload) values ('Gilgamesh Axe', 'axe', ?, 35, 1, 287100);
-
