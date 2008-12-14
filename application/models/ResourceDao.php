@@ -37,4 +37,15 @@ class Model_Resource
 	{
 		return $this->getResourceTable()->fetchAll('1', 'name')->toArray();
 	}
+	
+	public function findByName($name)
+	{
+		$table = $this->getResourceTable();
+		$select = $table->select()->where('name = ?', $name);
+		$res = $table->fetchAll($select)->current();
+		if($res)
+			return $res->toArray();
+		else
+			echo $name . "<br />";
+	}
 }

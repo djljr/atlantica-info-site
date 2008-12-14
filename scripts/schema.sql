@@ -6,6 +6,8 @@ drop table if exists mercenary_group;
 drop table if exists resource;
 drop table if exists craftable;
 drop table if exists skill;
+drop table if exists resource_category;
+drop table if exists formula;
 
 create table user (
 	id serial,
@@ -49,7 +51,7 @@ create table mercenary_group (
 
 create table resource (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name varchar(50),
+	name varchar(100),
 	fixedprice integer,
 	category varchar(50) references resource_category(name)
 );
@@ -62,12 +64,19 @@ create table resource_category (
 
 create table craftable (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	name varchar(50),
+	name varchar(100),
 	skill varchar(50) references skill(name),
 	experience integer,
-	minlevel integer,
-	batchsize integer,
-	workload integer
+	level integer,
+	batch integer,
+	workload integer,
+	category varchar(50) references resource_category(name)
+);
+
+create table formula (
+	craftable_id int references craftable(id),
+	resource_id int references resource(id),
+	amount int
 );
 
 create table skill (
