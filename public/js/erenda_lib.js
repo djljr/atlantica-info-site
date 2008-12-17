@@ -19,3 +19,8 @@ function isVisible(elem)
 {
     return !hasElementClass(elem, "invisible");
 }
+
+function showOnLoad(elem)
+{
+	addLoadEvent(partial(makeVisible,elem));
+}

@@ -11,6 +11,8 @@
 
 <?php $this->headLink()->prependStylesheet('/css/mainstyle.css'); ?>
 <?php echo $this->headLink(); ?>
+
+<?php echo $this->headScript(); ?>
 </head>
 <body>
 
@@ -38,7 +40,7 @@
 
 
 <span onClick="javascript:toggleVisible('game');"><img src="/images/common/menu_game.png"></span><br>
-<div id="game" name="game" class="invisible">
+<div id="game" class="invisible">
 <a href="">Classes</a><br>
 <a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>">Mercenaries</a><br>
 <a href="">Skills</a><br>

@@ -1,11 +1,5 @@
-<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'exportresources'), 'default', true) ?>">export</a>
-<br />
+<?php $this->headScript()->appendScript("showOnLoad('crafting');")?>
 <table>
-<form method="post" action="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'addresource'), 'default', true) ?>">
-<label for="name">Name: <input name="name" /> </label><br />
-<label for="fixedprice">Price: <input name="fixedprice" /> </label><br />
-<input type="submit" value="Add" />
-</form>
 <tr><th>id</th><th>name</th><th>fixed price</th>
 <?php foreach ($this->resources as $resource) { ?>
 	<tr>
