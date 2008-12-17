@@ -6,7 +6,7 @@ margin: 0px 0px 0px 0px;
 height:100%; 
 color: #FFFFFF;
 font: 12px georgia;
-background-image:url(/images/common/silverbg.jpg);
+
 
 }
 
@@ -30,7 +30,8 @@ margin: 0px 0px 0px 0px;
 width:849px;
 margin-left: auto ;
   margin-right: auto ;
-background: #98AFC7;
+background: #EDEDED;
+height:900px;
 
 }
 
@@ -66,22 +67,21 @@ position:absolute;
 padding:10px 10px 10px; 10px;
 float: left;
 text-align:left;
-color:#000000;
+background: #EDEDED;
 
-background-image:url(/images/common/bg_sidebar.png);
+
 }
 
 
 #content {
 
 
-width:400px;
+width:650px;
 height:800px;
-color: white;
+color: #000000;
 float:right;
  
- background-color:	#000000;
- background-image:url(/images/common/bg_swatch.png);
+background: #EDEDED;
 
 
 }
