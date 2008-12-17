@@ -4,7 +4,11 @@
 <?php foreach ($this->resources as $resource) { ?>
 	<tr>
 		<td><?php echo $resource['id'] ?></td>
-		<td><?php echo $resource['name'] ?></td>
+		<td>
+			<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resource'), 'default', true) ?>/<?php echo $resource['id'] ?>">
+				<?php echo $resource['name'] ?>
+			</a>
+		</td>
 		<td><?php echo $resource['fixedprice'] ?></td>
 	</tr>
 <?php } ?>

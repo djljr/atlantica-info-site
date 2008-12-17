@@ -1,0 +1,31 @@
+<?php $this->headScript()->appendScript("showOnLoad('crafting');")?>
+
+<table>
+	<tr><th>id</th><th>name</th><th>exp</th><th>level</th><th>workload</th><th>cost</th><th>cost/workload</th></tr>
+	<tr>
+		<td><?php echo $this->craftable['id'] ?></td>
+		<td><?php echo $this->craftable['name'] ?></td>
+		<td><?php echo $this->craftable['experience'] ?></td>
+		<td><?php echo $this->craftable['level'] ?></td>
+		<td><?php echo $this->craftable['workload'] ?></td>
+		<td><?php echo $this->craftable['cost'] ?><?php if(!$this->craftable['actualcost']) { echo '*'; }?></td>
+		<td><?php echo ($this->craftable['cost']/$this->craftable['workload']) ?></td>
+	</tr>
+</table>
+
+<table>
+	<tr><th>id</th><th>name</th><th>cost</th><th>amount</th><th>total</th></tr>
+	<?php foreach($this->craftable['resources'] as $resource) {?>
+	<tr>
+		<td><?php echo $resource['id'] ?></td>
+		<td>
+			<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resource'), 'default', true) ?>/<?php echo $resource['id'] ?>">
+				<?php echo $resource['name'] ?></td>
+			</a>
+		</td>
+		<td><?php echo $resource['fixedprice'] ?></td>
+		<td><?php echo $resource['amount'] ?></td>
+		<td><?php echo ($resource['fixedprice'] * $resource['amount']) ?></td>
+	</tr>
+	<?php }?>
+</table>

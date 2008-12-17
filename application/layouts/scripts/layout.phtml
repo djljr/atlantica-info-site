@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head><title>Atlantica index</title>
+<head><title><?php echo $this->title?></title>
 
 <script type="text/javascript" src="/js/Mochikit/Mochikit.js"></script>
 <script type="text/javascript" src="/js/erenda_lib.js"></script>
@@ -103,7 +103,7 @@
 <div id="crafting" class="invisible">
 Crafting FAQ<br>
 Crafting Levels<br>
-<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'formulas'), 'default', true) ?>">Formulas</a><br>
+<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'craftables'), 'default', true) ?>">Formulas</a><br>
 <a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resources'), 'default', true) ?>">Resources</a><br>
 </div>
 <p>

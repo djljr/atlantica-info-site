@@ -1,0 +1,19 @@
+<?php $this->headScript()->appendScript("showOnLoad('crafting');")?>
+<table>
+<tr><th>id</th><th>name</th><th>exp</th><th>level</th><th>workload</th><th>cost</th><th>cost/workload</th></tr>
+<?php foreach ($this->data as $craftable) { ?>
+	<tr>
+		<td><?php echo $craftable['id'] ?></td>
+		<td>
+			<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'craftable'), 'default', true) ?>/<?php echo $craftable['id'] ?>">
+				<?php echo $craftable['name'] ?>
+			</a>
+		</td>
+		<td><?php echo $craftable['experience'] ?></td>
+		<td><?php echo $craftable['level'] ?></td>
+		<td><?php echo $craftable['workload'] ?></td>
+		<td><?php echo $craftable['cost'] ?><?php if(!$craftable['actualcost']) { echo '*'; }?></td>
+		<td><?php echo ($craftable['cost']/$craftable['workload']) ?></td>
+	</tr>
+<?php }?>
+</table>

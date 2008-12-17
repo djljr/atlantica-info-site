@@ -1,6 +1,7 @@
 <?php
+require_once 'AbstractDao.php';
 
-class Model_Resource
+class Model_Resource extends AbstractDao
 {
 	protected $_resourceTable;
 	
@@ -13,6 +14,16 @@ class Model_Resource
 		}
 		return $this->_resourceTable;
 	}
+	
+	public function findByCraftableId($id)
+	{
+		$db = $this->getDbAdapter();
+		$sql = 
+			"select r.id as id, r.name as name, r.fixedprice as fixedprice, f.amount as amount " .
+			"from resource r join formula f on r.id = f.resource_id ".
+			"where f.craftable_id = ?";
+		return $db->fetchAssoc($sql, $id);
+	}		
 	
 	public function save(array $resource)
 	{
@@ -47,5 +58,11 @@ class Model_Resource
 			return $res->toArray();
 		else
 			echo $name . "<br />";
+	}
+	
+	public function find($id)
+	{
+		$table = $this->getResourceTable();
+		return $table->find($id)->current()->toArray();
 	}
 }

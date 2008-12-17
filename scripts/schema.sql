@@ -78,6 +78,7 @@ create table formula (
 	resource_id int references resource(id),
 	amount int
 );
+create index "ix_formula_craftable_id_resource_id" on formula ("craftable_id", "resource_id");
 
 create table skill (
 	id varchar(50) primary key not null,

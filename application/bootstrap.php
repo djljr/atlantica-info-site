@@ -35,5 +35,19 @@
 	      	'action'     => 'mercenary'
     	)
 	));
+	$router->addRoute('craftable', new Zend_Controller_Router_Route(
+		'crafting/craftable/:cid',
+		array(
+			'controller' => 'crafting',
+			'action' => 'craftable'
+		)
+	));
+	$router->addRoute('resource', new Zend_Controller_Router_Route(
+		'crafting/resource/:rid',
+		array(
+			'controller' => 'crafting',
+			'action' => 'resource'
+		)
+	));	
 	
 	unset($frontController, $view, $configuration, $dbAdapter, $registry, $router);
