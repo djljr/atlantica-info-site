@@ -27,6 +27,11 @@ class CalendarController extends Zend_Controller_Action
 		
 		$months = $this->int_divide($days, $month_day);
 		$days = $days - $months * $month_day;
+		if($days == 0)
+		{
+			$days = 30;
+			$months = $months - 1;
+		}
 		
 		$years = $this->int_divide($months, $year_month);
 		$months = $months - $years * $year_month;
