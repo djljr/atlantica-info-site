@@ -5,6 +5,23 @@ class CraftingController extends Zend_Controller_Action
 	protected $_resourceDao;
 	protected $_craftableDao;
 	
+	public function indexAction()
+	{
+		$craftableDao = $this->_getCraftableDao();
+
+		$this->view->title = "Crafting";
+		$this->view->data = $craftableDao->findCraftingSkills();
+	}
+	
+	public function skillAction()
+	{
+		$skill = $this->_getParam("skill");
+		$craftableDao = $this->_getCraftableDao();
+
+		$this->view->title = "List of Craftables";
+		$this->view->data = $craftableDao->findBySkill($skill);
+	}
+	
 	public function craftablesAction()
 	{
 		$craftableDao = $this->_getCraftableDao();

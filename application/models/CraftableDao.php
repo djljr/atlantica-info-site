@@ -40,6 +40,21 @@ class Model_Craftable extends AbstractDao
 
 		return $db->fetchAssoc($sql, $resourceId);
 	}
+	
+	public function findCraftingSkills()
+	{
+		$db = $this->getDbAdapter();
+		$sql = "select id, name from skill";
+		return $db->fetchAssoc($sql);
+	}
+	
+	public function findBySkill($skill)
+	{
+		$db = $this->getDbAdapter();
+		$sql = $this->getCraftableSql("where c.category = ?");
+		
+		return $db->fetchAssoc($sql, $skill);
+	}
 		
 	protected function getCraftableSql($where_clause = '')
 	{

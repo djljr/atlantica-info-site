@@ -6,10 +6,10 @@
 		<td><?php echo $this->craftable['id'] ?></td>
 		<td><?php echo $this->craftable['name'] ?></td>
 		<td><?php echo $this->craftable['experience'] ?></td>
-		<td><?php echo $this->craftable['level'] ?></td>
-		<td><?php echo $this->craftable['workload'] ?></td>
-		<td><?php echo $this->craftable['cost'] ?><?php if(!$this->craftable['actualcost']) { echo '*'; }?></td>
-		<td><?php echo ($this->craftable['cost']/$this->craftable['workload']) ?></td>
+		<td style="text-align:right"><?php echo $this->craftable['level'] ?></td>
+		<td style="text-align:right"><?php echo $this->craftable['workload'] ?></td>
+		<td style="text-align:right"><?php echo $this->craftable['cost'] ?><?php if(!$this->craftable['actualcost']) { echo '*'; }?></td>
+		<td style="text-align:right"><?php echo number_format(($this->craftable['cost']/$this->craftable['workload']),3) ?></td>
 	</tr>
 </table>
 
@@ -23,9 +23,9 @@
 				<?php echo $resource['name'] ?></td>
 			</a>
 		</td>
-		<td><?php echo $resource['fixedprice'] ?></td>
-		<td><?php echo $resource['amount'] ?></td>
-		<td><?php echo ($resource['fixedprice'] * $resource['amount']) ?></td>
+		<td style="text-align:right"><?php echo $resource['fixedprice'] ?></td>
+		<td style="text-align:right"><?php echo $resource['amount'] ?></td>
+		<td style="text-align:right"><?php echo ($resource['fixedprice'] * $resource['amount']) ?></td>
 	</tr>
 	<?php }?>
 </table>

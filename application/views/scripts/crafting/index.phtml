@@ -1,0 +1,6 @@
+<?php $this->headScript()->appendScript("showOnLoad('crafting');")?>
+<ul>
+<?php foreach($this->data as $row) {?>
+	<li><a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'skill'), 'default', true) ?>/<?php echo $row['id']?>"><?php echo $row['name']?></a></li>
+<?php }?>
+</ul>

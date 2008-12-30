@@ -10,10 +10,10 @@
 			</a>
 		</td>
 		<td><?php echo $craftable['experience'] ?></td>
-		<td><?php echo $craftable['level'] ?></td>
+		<td style="text-align:right"><?php echo $craftable['level'] ?></td>
 		<td style="text-align:right"><?php echo $craftable['workload'] ?></td>
 		<td style="text-align:right"><?php echo $craftable['cost'] ?><?php if(!$craftable['actualcost']) { echo '*'; }?></td>
-		<td style="text-align:right"><?php echo number_format(($craftable['cost']/$craftable['workload']),3) ?></td>
+		<td style="text-align:right"><?php echo number_format(($craftable['cost']/$craftable['workload']), 3) ?></td>
 	</tr>
 <?php }?>
 </table>

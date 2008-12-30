@@ -28,6 +28,13 @@
 	
 	//Custom routes
 	$router = $frontController->getRouter();
+	$router->addRoute('skill', new Zend_Controller_Router_Route(
+		'crafting/skill/:skill',
+		array(
+			'controller' => 'crafting',
+			'action' => 'skill'
+		)
+	));	
 	$router->addRoute('mercenary', new Zend_Controller_Router_Route(
     	'game/mercenaries/:merc',
     	array(
