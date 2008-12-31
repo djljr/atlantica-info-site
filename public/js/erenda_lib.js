@@ -24,3 +24,9 @@ function showOnLoad(elem)
 {
 	addLoadEvent(partial(makeVisible,elem));
 }
+
+function int_divide(x, y) {
+    if (x == 0) return 0;
+    if (y == 0) return false;
+    return (x - (x % y)) / y;
+}

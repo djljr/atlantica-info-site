@@ -1,1 +1,24 @@
-<?php echo $this->gametime ?>
+<script>
+function doConvert()
+{
+	var hours = $('hour').value;
+	var days = $('day').value;
+	var months = $('month').value;
+	var years = $('year').value;
+
+	var ts = getTimestampFromGameTime(years, months, days, hours);
+	var d = new Date();
+	d.setTime(ts * 1000);
+	var str = d.toString();
+	$('output').innerHTML = str;
+}
+</script>
+
+<?php echo $this->gametime['repr'] ?>
+<br />
+<input id="hour" type="text" size="3" value="<?php echo $this->gametime['hour']?>"> hrs 
+<input id="month" type="text" size="3" value="<?php echo $this->gametime['month']?>">/
+<input id="day" type="text" size="3" value="<?php echo $this->gametime['day']?>">/
+<input id="year" type="text" size="3" value="<?php echo $this->gametime['year']?>">
+<button onclick="javascript:doConvert();">Convert</button>
+<div id="output"></div>
