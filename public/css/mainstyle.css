@@ -30,12 +30,10 @@ margin: 0px 0px 0px 0px;
 width:849px;
 margin-left: auto ;
   margin-right: auto ;
-background: #EDEDED;
-height:900px;
+background: #FFFFFF;
+height:14000px;
 
 }
-
-
 
 
 
@@ -46,15 +44,14 @@ width:849px;
 background-repeat:no-repeat;
 position:relative;
 
- background-color:	#2B547E;
+background-color:	#2B547E;
 }
 
 #topmenu{
 
 position:relative;
 top:100%;
-
-  background-color:	#2B547E;
+background-color:	#2B547E;
 }
 
 
@@ -63,7 +60,6 @@ top:100%;
 width:150px;
 
 position:absolute;
-
 padding:10px 10px 10px; 10px;
 float: left;
 text-align:left;
@@ -76,23 +72,14 @@ background: #EDEDED;
 #content {
 
 
-width:650px;
-height:800px;
+width:680px;
+height:120%;
 color: #000000;
 float:right;
  
 background: #EDEDED;
 
 
-}
-
-#bottom {
-width:100%;
-height:175px;
-background: pink;
-position: relative 100% 100%;
-color:black;
-margin: 0px 0px 0px 0px;
 }
 
 .invisible { display: none; }
