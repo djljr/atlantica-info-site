@@ -1,10 +1,10 @@
 
  
 BODY {
-background: #EDEDED;
+background:#000000;
 margin: 0px 0px 0px 0px;
 height:100%; 
-color: #FFFFFF;
+color: #191970; 
 font: 12px georgia;
 
 
@@ -13,7 +13,7 @@ font: 12px georgia;
 
 A:link {text-decoration: none; color: #153E7E;}
 A:visited{text-decoration: none; color: #153E7E;}
-A:hover {text-decoration: underline; color: #FFFFFF;}
+A:hover {text-decoration: underline; color: #FF6600;}
 A:active {text-decoration: none; color: #153E7E;}
 
 
@@ -30,7 +30,11 @@ margin: 0px 0px 0px 0px;
 width:849px;
 margin-left: auto ;
   margin-right: auto ;
-background: black;
+
+background: #EDEDED;
+position:relative;
+min-height:1000px;
+
 
 
 }
@@ -59,7 +63,6 @@ background-color:	#2B547E;
 #sidemenu {
 width:150px;
 
-position:absolute;
 padding:10px 10px 10px; 10px;
 float: left;
 text-align:left;
@@ -72,9 +75,9 @@ background: #EDEDED;
 #content {
 
 
-width:680px;
-height:120%;
-color: #000000;
+width:100%;
+
+color: red;
 float:right;
  
 background: #EDEDED;
