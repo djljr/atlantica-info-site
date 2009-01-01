@@ -4,7 +4,6 @@
 
 <script type="text/javascript" src="/js/Mochikit/Mochikit.js"></script>
 <script type="text/javascript" src="/js/erenda_lib.js"></script>
-<script type="text/javascript" src="/js/atlantica_common.js"></script>
 
 <!--[if lt IE 7.]>
 <script defer type="text/javascript" src="pngfix.js"></script>
@@ -17,6 +16,7 @@
 </head>
 <body>
 
+
 <div id="pagewrapper">
 
 <div id ="pageheader"> <div id="top"><div id="topmenu">
@@ -28,6 +28,7 @@
 <a href=""><img id="top_about" src="/images/common/top_aboutA.png" border="0" onMouseover="document.top_about.src='/images/common/top_aboutB.png';" onMouseout="document.top_about.src='/images/common/top_aboutA.png';"></a>
 </div></div></div><br>
 
+<div id="content">
 <div id="sidemenu">
 <span onClick="javascript:toggleVisible('news');"><img src="/images/common/menu_news.png"> </span><br>
 <div id="news" name="news">
@@ -129,10 +130,11 @@ Supply and Demand basics</div>
 <div id="strat" class="invisible">
 Mercenaries<br>
 Did you know…<br></div>
-</div><div id="content">
+</div>
 <?php echo $this->layout()->content ?>
 </div>
 </div>
 
+</div>
 </body></html>
 
