@@ -17,7 +17,6 @@
 </head>
 <body>
 
-
 <div id="pagewrapper">
 
 <div id ="pageheader"> <div id="top"><div id="topmenu">
@@ -29,7 +28,8 @@
 <a href=""><img id="top_about" src="/images/common/top_aboutA.png" border="0" onMouseover="document.top_about.src='/images/common/top_aboutB.png';" onMouseout="document.top_about.src='/images/common/top_aboutA.png';"></a>
 </div></div></div><br>
 
-<div id="sidemenu"><span onClick="javascript:toggleVisible('news');"><img src="/images/common/menu_news.png"> </span><br>
+<div id="sidemenu">
+<span onClick="javascript:toggleVisible('news');"><img src="/images/common/menu_news.png"> </span><br>
 <div id="news" name="news">
 <a href="">Front Page News</a><br>
 <a href="">Archived News</a><br>
@@ -98,8 +98,6 @@
 <a href="">Mischievous Witch</a> <p>
 </div>
 <p>
-
-
 <span onClick="javascript:toggleVisible('crafting');"><img src="/images/common/menu_crafting.png"></span><br>
 <div id="crafting" class="invisible">
 Crafting FAQ<br>
@@ -131,12 +129,10 @@ Supply and Demand basics</div>
 <div id="strat" class="invisible">
 Mercenaries<br>
 Did you know…<br></div>
-</div>
-
-<div id="content">
+</div><div id="content">
 <?php echo $this->layout()->content ?>
+</div>
+</div>
 
-</div>
-</div>
 </body></html>
 
