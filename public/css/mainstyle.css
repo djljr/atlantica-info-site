@@ -62,13 +62,12 @@ background-color:	#2B547E;
 
 #sidemenu {
 width:150px;
-
 padding:10px 10px 10px; 10px;
 float: left;
 text-align:left;
-background: #EDEDED;
-
-
+background-image:url(/images/common/sidebar_bg.jpg);
+min-height:800px;
+               
 }
 
 
@@ -76,7 +75,6 @@ background: #EDEDED;
 
 
 width:100%;
-
 color:#000066;
 float:right;
 font-family:arial;
@@ -86,3 +84,12 @@ background: #EDEDED;
 }
 
 .invisible { display: none; }
+
+.textheadings {
+	color: #191970;
+	font-size:medium;
+	}
+	.date {
+	color: #191970;
+	font-size:xx-small;
+	}
