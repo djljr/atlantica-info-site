@@ -2,6 +2,7 @@
 #merc_wrapper {
     background-image:url(/images/gamepictures/Mercbg_middle.png);
 	width:600px;
+	left-margin:100px;
 }
 #merc_stats{
 

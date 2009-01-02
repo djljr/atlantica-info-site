@@ -33,78 +33,82 @@
 <span onClick="javascript:toggleVisible('news');"><img src="/images/common/menu_news.png"> </span><br>
 <div id="news" name="news"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Front Page News</a><br>
+<span class="comingsooncontent">Front Page News</span><br>
+<span class="comingsooncontent">Report a News Story</span><br>
+<!--
 <a href="">Archived News</a><br>
 <a href="">Report a News Story</a><br>
 <a href="">Server Status</a><br>
 <a href="">Planned updates and downtimes</a><br>
+-->
 </div>
 <p>
 
 
 <span onClick="javascript:toggleVisible('game');"><img src="/images/common/menu_game.png"></span><br>
 <div id="game" class="invisible"  style="padding-left:15px;">
-<b>Coming Soon!!</b><br>
-<a href="">Classes</a><br>
 <a href="<?php echo $this->url(array('controller'=>'game', 'action'=>'mercenaries'), 'default', true) ?>">Mercenaries</a><br>
-<a href="">Skills</a><br>
-<a href="">Lvls<br>
+<b>Coming Soon!!</b>
+<br><span class="comingsooncontent">Merc Quests</span><br>
+<span class="comingsooncontent">Level FAQ</span><br>
+<!--<a href="">Skills</a><br>
+<a href="">Classes</a><br>
+
 <a href="">Quest NPC</a><br>
 <a href="">Merc title</a><br>
-<a href="">Merc quests</a><br>
+
+-->
 </div>
 <p>
 
 <span onClick="javascript:toggleVisible('npcinfo');"><img src="/images/common/menu_npc.png"></span><br>
 <div id="npcinfo" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Livingston</a><br>
-<a href="">Goncourt</a><br>
-<a href="">Hui Chao</a>  <br>
-<a href="">Howard  </a>
+<span class="comingsooncontent">Livingston</span><br>
+<span class="comingsooncontent">Goncourt</span><br>
+<!--<span class="comingsooncontent">Hui Chao</a>  <br>
+<a href="">Howard  </a>-->
 </div>
 <p>
 <span onClick="javascript:toggleVisible('quests'); "onClick="javascript:toggleVisible('quests');"><img src="/images/common/menu_quests.png"></span><br>
 <div id="quests" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Main: </a><br>
-<a href="">Sidequests:</a><br>
+<span class="comingsooncontent">Main: </span><br>
+<span class="comingsooncontent">Sidequests:</span><br>
 </div>
 <p>
 <span onClick="javascript:toggleVisible('iteminfo');"><img src="/images/common/menu_item.png"><img src="/images/common/menu_items.png"></span><br>
 <div id="iteminfo" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Equipment Info</a><br>
-<a href="">Other Stuff</a> <br>
-<a href="">Enchanting FAQ</a><br>
-<a href="">Enhancing</a><br>
-<a href="">Material Boxes</a><br>
+<span class="comingsooncontent">Equipment Info</span><br>
+<!--<a href="">Enchanting FAQ</a><br> 
+<a href="">Enhancing</a><br>-->
+<span class="comingsooncontent">Material Boxes</span><br>
 </div>
 <p>
 <span onClick="javascript:toggleVisible('location');"><img src="/images/common/menu_locations.png"></span><br>
 <div id="location" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Dungeons</a><br>
-<a href="">Maps</a><br>
-<a href="">Towns</a><p>
+<span class="comingsooncontent">Dungeons</span>br>
+<!-- <a href="">Maps</a>--><br>
+<span class="comingsooncontent">Towns</span><p>
 </div>
 <p>
 <span onClick="javascript:toggleVisible('monsters');"><img src="/images/common/menu_monsters.png"></span><br>
 <div id="monsters" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Special Mobs</a><br>
-<a href="">Monster Info FAQ</a><br>
+<!-- <a href="">Special Mobs</a><br>-->
+<span class="comingsooncontent">Monster Info FAQ</span><br>
 </div>
 <p>
 <span onClick="javascript:toggleVisible('rome');"><img src="/images/common/menu_rome.png"></span><br>
 <div id="rome" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-<a href="">Vulcanus </a><br>
-<a href="">Gambler De Mere</a><br>
-<a href="">Pointry</a> <br>
-<a href="">Sothesby </a><br>
-<a href="">Maximus</a> <br>
-<a href="">Mischievous Witch</a> <p>
+<span class="comingsooncontent">Vulcanus </span><br>
+<span class="comingsooncontent">Gambler De Mere</span><br>
+<span class="comingsooncontent">Pointry</span><br>
+<!-- <a href="">Sothesby </a><br>
+<a href="">Maximus</a> <br>-->
 </div>
 <p>
 <span onClick="javascript:toggleVisible('crafting');"><img src="/images/common/menu_crafting.png"></span><br>
@@ -118,30 +122,32 @@
 <span onClick="javascript:toggleVisible('guilds');"><img src="/images/common/menu_guilds.png"></span><br>
 <div id="guilds" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-Guild FAQ <br>
-Guild List by Server<br>
+<span class="comingsooncontent">Guild FAQ</span> <br>
+<!-- Guild List by Server<br>-->
 <a href="<?php echo $this->url(array('controller'=>'guilds', 'action'=>'links'), 'default', true)?>">Links</a><br />
 </div>
 <p>
 <span onClick="javascript:toggleVisible('freeleague');"><img src="/images/common/menu_freeleague.png"></span><br>
 <div id="freeleague" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
- Free League Formations<br>
-Free League FAQ<p>
+ <!--Free League Formations<br>-->
+<span class="comingsooncontent">Free League FAQ<p></span>
 </div>
 <p>
 <span onClick="javascript:toggleVisible('market');"><img src="/images/common/menu_market.png"></span><br>
 <div id="market" class="invisible" style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-Products and Profits<br>
-Supply and Demand basics</div> 
+<span class="comingsooncontent">Products and Profits<br>
+Supply and Demand basics</span></div> 
 <p>
 
 <span onClick="javascript:toggleVisible('strat');"><img src="/images/common/menu_strategies.png"></span><br>
 <div id="strat" class="invisible"  style="padding-left:15px;">
 <b>Coming Soon!!</b><br>
-Mercenaries<br>
-Did you know…<br></div>
+<span class="comingsooncontent">Tips & Tricks<br></span>
+<!-- 
+Mercenaries</br>
+Did you know…<br>--></div>
 </div>
 <?php echo $this->layout()->content ?>
 </div>
