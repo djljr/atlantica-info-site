@@ -1,0 +1,20 @@
+Day: <?php echo $this->date['mday']?><br />
+Month: <?php echo $this->date['mon']?><br />
+Year: <?php echo $this->date['year']?><br />
+AO Start: <?php echo $this->aoDateStart['repr']?><br />
+AO End: <?php echo $this->aoDateEnd['repr']?><br />
+<form method="post">
+<input type="radio" name="timeType" value="earth" />Earth<br />
+Date: <input type="text" name="earthMonth" size="2" /> / <input type="text" name="earthDay" size="2" /> / <input type="text" name="earthYear" size="2" /> <br />
+Time: <input type="text" name="earthHour" size="2" />:<input type="text" name="earthMinute" size="2" /> <select name="earthAmPm"><option value="am">am</option><option value="pm">pm</option></select><br />
+<input type="radio" name="timeType" value="atlantica" />Atlantica<br />
+Date: <input type="text" name="atlanticaMonth" size="2" /> / <input type="text" name="atlanticaDay" size="2" /> / <input type="text" name="atlanticaYear" size="2" /><br />
+<br />
+Title: <input type="text" name="title" /><br />
+Category: <input type="text" name="category" /><br />
+Symbol: <input type="text" name="symbol" /><br />
+Description:<br />
+<textarea></textarea>
+<br />
+<input type="submit" value="Post" />
+</form> 

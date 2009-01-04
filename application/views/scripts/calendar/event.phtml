@@ -1,0 +1,7 @@
+Day: <?php echo $this->date['mday']?><br />
+Month: <?php echo $this->date['mon']?><br />
+Year: <?php echo $this->date['year']?><br />
+AO: <?php echo $this->aoDate['repr']?><br />
+
+<?php $dateUrl = $this->date['mon'] . "/" . $this->date['mday'] . "/" . $this->date['year'] ?>
+<a href="<?php echo $this->url(array('controller'=>'calendar', 'action'=>'addevent'), 'default', true)?>/<?php echo $dateUrl?>">Post New Event</a>

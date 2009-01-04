@@ -2,6 +2,75 @@
 
 class CalendarController extends Zend_Controller_Action
 {	
+	public function indexAction()
+	{
+		$date = time();
+		$day = date('d', $date);
+		$month = date('m', $date);
+		$year = date('Y', $date);
+		$first_day = mktime(0,0,0,$month, 1, $year);
+		
+		$this->view->blanks = date('N', $first_day) % 7;
+		$this->view->year = $year;
+		$this->view->month = $month;
+		$this->view->title = date('F', $first_day);
+		$this->view->daysInMonth = cal_days_in_month(0, $month, $year);
+	}
+	
+	public function eventAction()
+	{
+		$month = $this->_getParam("month");
+		$day = $this->_getParam("day");
+		$year = $this->_getParam("year");
+		
+		$date = mktime(0,0,0,$month, $day, $year);
+		$this->view->date = getdate($date);
+		$this->view->aoDate = $this->getGameTimeFromTimestamp($date);
+	}
+	
+	public function addeventAction()
+	{
+		$month = $this->_getParam("month");
+		$day = $this->_getParam("day");
+		$year = $this->_getParam("year");
+		
+		$dateStart = mktime(0,0,0,$month, $day, $year);
+		$dateEnd = mktime(23, 59, 59, $month, $day, $year);
+		$this->view->date = getdate($dateStart);
+		$this->view->aoDateStart = $this->getGameTimeFromTimestamp($dateStart);
+		$this->view->aoDateEnd = $this->getGameTimeFromTimestamp($dateEnd);
+				
+		if ($this->getRequest()->isPost()) 
+		{
+			$ts = 0;
+			$type = $this->_getParam("timeType");
+			if('atlantica' == $type)
+			{
+				$postMonth = $this->_getParam("atlanticaMonth");
+				$postDay = $this->_getParam("atlanticaDay");
+				$postYear = $this->_getParam("atlanticaYear");
+				
+				$ts = $this->getTimestampFromGameTime($postYear, $postMonth, $postDay, 0);
+			}
+			else if('earth' == $type)
+			{
+				$postMonth = $this->_getParam("earthMonth");
+				$postDay = $this->_getParam("earthDay");
+				$postYear = $this->_getParam("earthYear");
+				$postHour = $this->_getParam("earthHour");
+				$postMinute = $this->_getParam("earthMinute");
+				$ampm = $this->_getParam("earthAmPm");
+				if($ampm == 'pm')
+				{
+					$postHour = 12 + ($postHour % 12);
+				}
+				
+				$ts = mktime($postHour, $postMinute, 0, $postMonth, $postDay, $postYear);
+			}
+			echo date('r', $ts);
+		}
+	}
+	
 	public function gametimeAction()
 	{
 		$this->view->gametime = $this->getGameTimeFromTimestamp(time());

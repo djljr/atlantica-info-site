@@ -1,0 +1,45 @@
+<?php $this->headScript()->appendScript("showOnLoad('guilds');")?>
+<script>
+function showDetail(month, day, year)
+{
+	window.location.href = window.location.href + '/event/' + month + "/" + day + "/" + year;
+}
+</script>
+<table border="1" width="294">
+<tr><th colspan="7"><?php echo $this->title . " " . $this->year?></th></tr>
+<tr><td width=42>S</td><td width=42>M</td><td width=42>T</td><td width=42>W</td><td width=42>T</td><td width=42>F</td><td width=42>S</td></tr>
+<?php 
+$day_count = 1;
+echo "<tr>";
+//first we take care of those blank days
+$blank = $this->blanks;
+while ( $blank > 0 )
+{
+	echo "<td></td>";
+	$blank = $blank-1;
+	$day_count++;
+}
+
+$day_num = 1;
+while ( $day_num <= $this->daysInMonth )
+{
+	echo "<td onclick=\"javascript:showDetail($this->month, $day_num, $this->year)\"> $day_num </td>";
+	$day_num++;
+	$day_count++;
+	
+	//Make sure we start a new row every week
+	if ($day_count > 7)
+	{
+		echo "</tr><tr>";
+		$day_count = 1;
+	}
+}
+while ( $day_count >1 && $day_count <=7 )
+{
+	echo "<td></td>";
+	$day_count++;
+}
+
+echo "</tr>";
+?>
+</table>

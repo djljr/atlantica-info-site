@@ -28,6 +28,20 @@
 	
 	//Custom routes
 	$router = $frontController->getRouter();
+	$router->addRoute('event_create', new Zend_Controller_Router_Route(
+		'calendar/addevent/:month/:day/:year',
+		array(
+			'controller' => 'calendar',
+			'action' => 'addevent'
+		)
+	));
+	$router->addRoute('event_detail', new Zend_Controller_Router_Route(
+		'calendar/event/:month/:day/:year',
+		array(
+			'controller' => 'calendar',
+			'action' => 'event'
+		)
+	));
 	$router->addRoute('skill', new Zend_Controller_Router_Route(
 		'crafting/skill/:skill',
 		array(
