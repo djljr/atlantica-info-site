@@ -1,5 +1,9 @@
 <html>
 <head>
+<script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="/js/jquery.scrollable-0.13.min.js"></script>
+<script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
+
 <style type="text/css">
 BODY {margin: 0px 0px 0px 0px;
 background-image:url(images/craftingcalc/color_bg.jpg);
@@ -11,9 +15,45 @@ font-size:medium;
 font-family:arial;
 color:#DEDEDE;
 }
+
 ul {list-style-type: none;
 align:left; }
 
+/* scrolling styling stuff */
+
+#skill_list {
+	width:25%; 
+	height:350px; 
+	float:left; 
+	text-align:left;
+	border: 1px solid;
+}
+
+#item_list {
+	width:75%; 
+	height:350px;
+	border:1px solid;
+}
+div.items {
+	height:100%;	
+	margin-left:8px;
+	width:475px !important;
+}
+
+div.items a {
+	display:block;
+	margin-right:8px;
+	width:100%;
+	color:#ccc;
+	text-decoration:none;
+	text-align:left;
+	cursor:pointer;
+}
+
+div.items a.active {	
+	color:#555;
+	cursor:default;
+}
 
 </style>
 
@@ -23,58 +63,67 @@ align:left; }
 <div id="title_top" style="width:100%; background-image:url(images/craftingcalc/top_bg.jpg); height:40px;">
 <div style="Float:left; width:26%; padding-left:5px; padding-top:10px;">  <span class="cr_titles">Crafting Skills</span></div>
 <div style="padding-left:5px; padding-top:10px;"> <span class="cr_titles">Craftable Items </span></div>
-
 </div>
 
-<div id="skill_list"  style="width:25%; height:600px; overflow:scroll; float:left; text-align:left;">
-<ul>
-  <li>Sword</li>
-  <li>Spear</li>
-  <li>Axe</li>
-  <li>Bow</li>
-  <li>Gun</li>
-  <li>Cannon</li>
-  <li>Staff</li>
-  <li>Helmet</li>
-  <li>Armor</li>
-  <li>Pants</li>
-  <li>Gauntlet</li>
-  <li>Shoes</li>
-  <li>Shield</li>
-  <li>Orb</li>
-  <li>Arrow</li>
-  <li>Bullet</li>
-  <li>Cannonball</li>
-  <li>Food</li>
-  <li>Medicine</li>
-  <li>Ring</li>
-  <li>Machine</li>
-  <li>Building</li>
-  <li>Crystal</li>
-  <li>Action</li>
-  <li>License</li>
-  <li>Mana Stone</li>
-  <li>Charm</li>
-  <li>Tool</li>
-  <li>Fishing</li>
-  <li>Stationery</li>
-  <li>Book</li>
-  <li>Sewing</li>
-  <li>Scroll</li>
-  <li>Quests</li>
-</ul></div>
-<p><div id="item_list" style="width:75%; height:300px; overflow:scroll;">
-<ul>
-<li> Spirit Sword</li>
-<li>Ocean Sword</li>
-</ul>
-
+<div id="skill_list"  style="">
+	<a class="prev">Up</a>
+	<div class="items">
+	  <a>Sword</a>
+	  <a>Spear</a>
+	  <a>Axe</a>
+	  <a>Bow</a>
+	  <a>Gun</a>
+	  <a>Cannon</a>
+	  <a>Staff</a>
+	  <a>Helmet</a>
+	  <a>Armor</a>
+	  <a>Pants</a>
+	  <a>Gauntlet</a>
+	  <a>Shoes</a>
+	  <a>Shield</a>
+	  <a>Orb</a>
+	  <a>Arrow</a>
+	  <a>Bullet</a>
+	  <a>Cannonball</a>
+	  <a>Food</a>
+	  <a>Medicine</a>
+	  <a>Ring</a>
+	  <a>Machine</a>
+	  <a>Building</a>
+	  <a>Crystal</a>
+	  <a>Action</a>
+	  <a>License</a>
+	  <a>Mana Stone</a>
+	  <a>Charm</a>
+	  <a>Tool</a>
+	  <a>Fishing</a>
+	  <a>Stationery</a>
+	  <a>Book</a>
+	  <a>Sewing</a>
+	  <a>Scroll</a>
+	  <a>Quests</a>
+	</div>
+	<a class="next">Down</a>
 </div>
-</div></br>
+<div id="item_list" style="">
+	<a class="prev">Up</a>
+	
+	<div class="items">
+		<a>Spirit Sword</a>
+		<a>Ocean Sword</a>
+	</div>
+	
+	<a class="next">Down</a>
+</div>
+</div><br />
 <div id="materials" style="width:100%; min-height:400px;">
 
-
 </div>
+
+<script type="text/javascript">
+	$('#skill_list').scrollable({vertical: true, size:16});
+	$('#item_list').scrollable({vertical: true, size:16});
+</script>
 
 </body>
 </html>
