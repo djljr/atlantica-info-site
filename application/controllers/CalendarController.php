@@ -1,7 +1,9 @@
 <?php
 
 class CalendarController extends Zend_Controller_Action
-{	
+{
+	protected $_calendarEventDao;
+		
 	public function indexAction()
 	{
 		$date = time();
@@ -42,7 +44,7 @@ class CalendarController extends Zend_Controller_Action
 				
 		if ($this->getRequest()->isPost()) 
 		{
-			$ts = 0;
+			$event = array();
 			$type = $this->_getParam("timeType");
 			if('atlantica' == $type)
 			{
@@ -50,7 +52,7 @@ class CalendarController extends Zend_Controller_Action
 				$postDay = $this->_getParam("atlanticaDay");
 				$postYear = $this->_getParam("atlanticaYear");
 				
-				$ts = $this->getTimestampFromGameTime($postYear, $postMonth, $postDay, 0);
+				$event['timestamp'] = $this->getTimestampFromGameTime($postYear, $postMonth, $postDay, 0);
 			}
 			else if('earth' == $type)
 			{
@@ -65,9 +67,16 @@ class CalendarController extends Zend_Controller_Action
 					$postHour = 12 + ($postHour % 12);
 				}
 				
-				$ts = mktime($postHour, $postMinute, 0, $postMonth, $postDay, $postYear);
+				$event['timestamp'] = mktime($postHour, $postMinute, 0, $postMonth, $postDay, $postYear);
 			}
-			echo date('r', $ts);
+			
+			$event['title'] = $this->_getParam("title");
+			$event['category'] = $this->_getParam("category");
+			$event['symbol'] = $this->_getParam("symbol");
+			$event['description'] = $this->_getParam("description");
+			
+			$calendarEventDao = $this->_getCalendarEventDao();
+			$calendarEventDao->save($event);
 		}
 	}
 	
@@ -133,5 +142,15 @@ class CalendarController extends Zend_Controller_Action
 	    if ($x == 0) return 0;
 	    if ($y == 0) return FALSE;
 	    return ($x - ($x % $y)) / $y;
-	}	
+	}
+
+	protected function _getCalendarEventDao()
+	{
+		if (null === $this->_calendarEventDao)
+		{
+			require_once APPLICATION_PATH . '/models/CalendarEventDao.php';
+			$this->_calendarEventDao = new Model_CalendarEvent;
+		}
+		return $this->_calendarEventDao;
+	}
 }

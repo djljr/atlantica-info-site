@@ -8,6 +8,7 @@ drop table if exists craftable;
 drop table if exists skill;
 drop table if exists resource_category;
 drop table if exists formula;
+drop table if exists calendar_event;
 
 create table user (
 	id serial,
@@ -83,4 +84,13 @@ create index "ix_formula_craftable_id_resource_id" on formula ("craftable_id", "
 create table skill (
 	id varchar(50) primary key not null,
 	name varchar(50) 
+);
+
+create table calendar_event (
+	id integer primary key autoincrement,
+	timestamp long,
+	title varchar(30),
+	category varchar(30),
+	symbol integer,
+	description text
 );
