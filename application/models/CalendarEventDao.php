@@ -1,6 +1,7 @@
 <?php
+require_once 'AbstractDao.php';
 
-class Model_CalendarEvent
+class Model_CalendarEvent extends AbstractDao
 {
 	protected $_table;
 	
@@ -35,15 +36,18 @@ class Model_CalendarEvent
 		$lastDay = cal_days_in_month(0, $month, $year);
 		$tsEnd = mktime(23,59,59,$month, $lastDay ,$year);
 		
-		$sql = "select id, timestamp, title, category, symbol, description from calendar_event where timestamp >= ? and timestamp <= ? order by timestamp";
-		$rows = $db->fetchAssoc($sql, $tsStart, $tsEnd);
+		$sql = "select id, timestamp, title, category, symbol, description from calendar_event where (timestamp > ?) and (timestamp < ?) order by timestamp";
+		$rows = $db->fetchAssoc($sql, array($tsStart, $tsEnd));
+		
 		$events = array();
 		$events['result'] = $rows;
 		$events['month'] = array();
 		foreach($rows as $row)
 		{
 			$day = date('d', $row['timestamp']);
-			
+			$events['month'][] = $day;
 		}
+		
+		return $events;
 	}
 }

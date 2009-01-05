@@ -17,6 +17,9 @@ class CalendarController extends Zend_Controller_Action
 		$this->view->month = $month;
 		$this->view->title = date('F', $first_day);
 		$this->view->daysInMonth = cal_days_in_month(0, $month, $year);
+		
+		$calendarEventDao = $this->_getCalendarEventDao();
+		$this->view->events = $calendarEventDao->fetchMonthEvents($month, $year);
 	}
 	
 	public function eventAction()
@@ -70,13 +73,16 @@ class CalendarController extends Zend_Controller_Action
 				$event['timestamp'] = mktime($postHour, $postMinute, 0, $postMonth, $postDay, $postYear);
 			}
 			
-			$event['title'] = $this->_getParam("title");
-			$event['category'] = $this->_getParam("category");
-			$event['symbol'] = $this->_getParam("symbol");
-			$event['description'] = $this->_getParam("description");
-			
-			$calendarEventDao = $this->_getCalendarEventDao();
-			$calendarEventDao->save($event);
+			if($event['timestamp'])
+			{
+				$event['title'] = $this->_getParam("title");
+				$event['category'] = $this->_getParam("category");
+				$event['symbol'] = $this->_getParam("symbol");
+				$event['description'] = $this->_getParam("description");
+				
+				$calendarEventDao = $this->_getCalendarEventDao();
+				$calendarEventDao->save($event);
+			}
 		}
 	}
 	
