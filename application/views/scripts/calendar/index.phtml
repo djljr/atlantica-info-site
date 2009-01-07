@@ -23,7 +23,7 @@ while ( $blank > 0 )
 $day_num = 1;
 while ( $day_num <= $this->daysInMonth )
 {
-	$style = in_array($day_num, $this->events['month']) ? "background-color: blue" : "";
+	$style = in_array($day_num, $this->events['month']) ? "background-color: cyan" : "";
 	echo "<td style=\"$style\" onclick=\"javascript:showDetail($this->month, $day_num, $this->year)\"> $day_num </td>";
 	$day_num++;
 	$day_count++;

@@ -42,12 +42,27 @@ class Model_CalendarEvent extends AbstractDao
 		$events = array();
 		$events['result'] = $rows;
 		$events['month'] = array();
+		$events['day'] = array();
 		foreach($rows as $row)
 		{
 			$day = date('d', $row['timestamp']);
 			$events['month'][] = $day;
+			$events['day'][$day][] = $row;
 		}
 		
 		return $events;
+	}
+	
+	public function fetchDayEvents($day, $month, $year)
+	{
+		$db = $this->getDbAdapter();
+		$tsStart = mktime(0,0,0,$month,$day,$year);
+		$lastDay = cal_days_in_month(0, $month, $year);
+		$tsEnd = mktime(23,59,59,$month, $day ,$year);
+		
+		$sql = "select id, timestamp, title, category, symbol, description from calendar_event where (timestamp > ?) and (timestamp < ?) order by timestamp";
+		$rows = $db->fetchAssoc($sql, array($tsStart, $tsEnd));
+		
+		return $rows;
 	}
 }

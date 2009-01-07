@@ -24,13 +24,18 @@ class CalendarController extends Zend_Controller_Action
 	
 	public function eventAction()
 	{
+		$calendarEventDao = $this->_getCalendarEventDao();
+		
 		$month = $this->_getParam("month");
 		$day = $this->_getParam("day");
 		$year = $this->_getParam("year");
 		
 		$date = mktime(0,0,0,$month, $day, $year);
+		$dateEnd = mktime(23,59,59,$month,$day,$year);
 		$this->view->date = getdate($date);
 		$this->view->aoDate = $this->getGameTimeFromTimestamp($date);
+		$this->view->aoEndDate = $this->getGameTimeFromTimestamp($dateEnd);
+		$this->view->events = $calendarEventDao->fetchDayEvents($day, $month, $year);
 	}
 	
 	public function addeventAction()

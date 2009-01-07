@@ -1,7 +1,13 @@
-Day: <?php echo $this->date['mday']?><br />
-Month: <?php echo $this->date['mon']?><br />
-Year: <?php echo $this->date['year']?><br />
-AO: <?php echo $this->aoDate['repr']?><br />
-
+<?php echo date("F d, Y", $this->date[0]) ?><br />
+AO: <?php echo $this->aoDate['repr'] ." to ".$this->aoEndDate['repr']?><br />
+<table>
+<?php foreach ($this->events as $event) {
+	echo "<tr>";
+	$date = getdate(date($event['timestamp']));
+	echo "<td>".date("h:i a", $event['timestamp'])."</td>";
+	echo "<td>".$event['title']."<br />".$event['description']."</td>";
+	echo "</tr>";
+}?>
+</table>
 <?php $dateUrl = $this->date['mon'] . "/" . $this->date['mday'] . "/" . $this->date['year'] ?>
 <a href="<?php echo $this->url(array('controller'=>'calendar', 'action'=>'addevent'), 'default', true)?>/<?php echo $dateUrl?>">Post New Event</a>
