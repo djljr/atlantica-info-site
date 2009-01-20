@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry excluding="css/**|images/**|js/**" kind="src" path="public"/>
+	<buildpathentry excluding="css/**|images/**|js/**|js|js/" kind="src" path="public"/>
 	<buildpathentry kind="src" path="library"/>
 	<buildpathentry excluding="config/**|layouts/**|views/**" kind="src" path="application"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
