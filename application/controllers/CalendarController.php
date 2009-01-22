@@ -88,6 +88,7 @@ class CalendarController extends Zend_Controller_Action
 				$calendarEventDao = $this->_getCalendarEventDao();
 				$calendarEventDao->save($event);
 			}
+			$this->_redirect("/calendar");
 		}
 	}
 	
