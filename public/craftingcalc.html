@@ -1,7 +1,7 @@
 <html>
 <head>
 <script type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
-<script type="text/javascript" src="/js/jquery.scrollable-0.13.min.js"></script>
+<script type="text/javascript" src="/js/jquery.scrollable-1.0.0.min.js"></script>
 <script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
 
 <style type="text/css">
@@ -21,7 +21,7 @@ align:left; }
 
 /* scrolling styling stuff */
 
-#skill_list {
+#skill_list_wrapper {
 	width:20%;
 	min-width:350px; 
 	height:350px; 
@@ -30,17 +30,43 @@ align:left; }
 	border: 1px solid red;
 }
 
-#item_list {
+#skill_list {
+	/* two required settings */
+	position:relative;
+	overflow:hidden;
+	
+	width:20%;
+	min-width:350px; 
+	height:300px; 
+}
+
+#item_list_wrapper {
 	width:30%; 
 	min-width:350px; 
 	height:350px;
 	border:1px solid blue;
 	float:left;
 }
-div.items {
-	height:100%;	
-	margin-left:8px;
-	width:475px !important;
+
+#item_list {
+	/* two required settings */
+	position:relative;
+	overflow:hidden;
+	
+	width:30%; 
+	min-width:350px; 
+	height:300px;	
+}
+
+/* root element for scrollable items */ 
+div.items {     
+    position:absolute; 
+     
+    /* this time we have very large space for height */     
+    height:20000em;
+    
+    margin-left:8px;
+    width:475px !important;     
 }
 
 div.items a {
@@ -66,8 +92,9 @@ div.items a.active {
 <div id="title_top" style="width:100%; background-image:url(images/craftingcalc/top_bg.jpg); height:40px;">
 </div>
 
-<div id="skill_list"  style="">
-	<a class="prev"><img align="left" src="images/craftingcalc/button_up.jpg"><img src="images/craftingcalc/skills_heading.jpg"></a>
+<div id="skill_list_wrapper">
+<a class="prev"><img align="left" src="images/craftingcalc/button_up.jpg"><img src="images/craftingcalc/skills_heading.jpg"></a>
+<div id="skill_list">
 	<div class="items">
 	  <a>Sword</a>
 	  <a>Spear</a>
@@ -104,27 +131,30 @@ div.items a.active {
 	  <a>Scroll</a>
 	  <a>Quests</a>
 	</div>
-	<a class="next"><img src="images/craftingcalc/button_down.jpg"></a>
 </div>
-<div id="item_list" style="">
-	<a class="prev"><img align="left" src="images/craftingcalc/button_up.jpg"><img src="images/craftingcalc/skills_heading.jpg"></a>
-	
+<a class="next"><img src="images/craftingcalc/button_down.jpg"></a>
+</div>
+<div id="item_list_wrapper">
+<a class="prev"><img align="left" src="images/craftingcalc/button_up.jpg"><img src="images/craftingcalc/skills_heading.jpg"></a>
+<div id="item_list">
 	<div class="items">
 		<a>Spirit Sword</a>
 		<a>Ocean Sword</a>
 	</div>
-	
-	<a class="next"><img align="left" src="images/craftingcalc/button_down.jpg"></a>
+</div>
+<a class="next"><img align="left" src="images/craftingcalc/button_down.jpg"></a>
 </div>
 </div><br />
 <div id="materials" style="width:100%; min-height:400px;">
 
 </div>
 
-<script type="text/javascript">
-	$('#skill_list').scrollable({vertical: true, size:16});
-	$('#item_list').scrollable({vertical: true, size:16});
-</script>
-
 </body>
+<script type="text/javascript">
+//execute your scripts when DOM is ready. this is a good habit
+$(function() {		
+	$('#skill_list').scrollable({vertical: true, size:16, easing: 'linear', clickable: false});
+	$('#item_list').scrollable({vertical: true, size:16, easing: 'linear', clickable: false});
+});
+</script>
 </html>
