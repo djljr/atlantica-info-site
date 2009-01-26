@@ -15,15 +15,39 @@ class Model_Resource extends AbstractDao
 		return $this->_resourceTable;
 	}
 	
-	public function findByCraftableId($id)
+	public function findByCraftableId($id, $main_resource = true)
 	{
 		$db = $this->getDbAdapter();
 		$sql = 
-			"select r.id as id, r.name as name, r.fixedprice as fixedprice, f.amount as amount " .
+			"select r.id as id, r.name as name, r.fixedprice as fixedprice, f.amount as amount, r.craftable as craftable, r.craftable_id as craftable_id " .
 			"from resource r join formula f on r.id = f.resource_id ".
 			"where f.craftable_id = ?";
-		return $db->fetchAssoc($sql, $id);
-	}		
+		$resources = $db->fetchAssoc($sql, $id);
+		foreach (array_keys($resources) as $key)
+		{
+			$resource = $resources[$key];
+			if($resource['craftable'] == 1)
+			{
+				$res_comp = $this->findByCraftableId($resource['craftable_id'], false);
+				$full_cost = 0;
+				foreach($res_comp as $comp)
+				{
+					$full_cost += $comp['full_cost'];
+				}
+				$resource['components'] = $res_comp;
+				$resource['full_cost'] = $full_cost;
+			}
+			else
+			{
+				if($main_resource)
+					$resource['full_cost'] = $resource['fixedprice'];
+				else
+					$resource['full_cost'] = ($resource['fixedprice'] * $resource['amount']);
+			}
+			$resources[$key] = $resource;
+		}
+		return $resources;
+	}
 	
 	public function save(array $resource)
 	{

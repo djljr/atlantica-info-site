@@ -54,7 +54,9 @@ create table resource (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	name varchar(100),
 	fixedprice integer,
-	category varchar(50) references resource_category(name)
+	category varchar(50) references resource_category(name),
+	craftable boolean,
+	craftable_id integer references craftable(id)
 );
 create unique index "ix_resource" on "resource" ("name");
 

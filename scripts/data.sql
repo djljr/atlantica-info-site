@@ -6236,3 +6236,6 @@ insert into formula (craftable_id, resource_id, amount) values (661,427,200);
 insert into formula (craftable_id, resource_id, amount) values (661,428,200);
 insert into formula (craftable_id, resource_id, amount) values (661,434,50);
 insert into formula (craftable_id, resource_id, amount) values (661,168,2);
+
+update resource set craftable = 1 where exists (select * from craftable c where resource.name = c.name);
+update resource set craftable_id = (select c.id from craftable c where resource.name = c.name);

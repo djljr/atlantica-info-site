@@ -14,18 +14,37 @@
 </table>
 
 <table>
-	<tr><th>id</th><th>name</th><th>cost</th><th>amount</th><th>total</th></tr>
-	<?php foreach($this->craftable['resources'] as $resource) {?>
+<tr><th>id</th><th colspan="2">name</th><th>cost</th><th>amount</th><th>total</th></tr>
+<?php foreach($this->craftable['resources'] as $resource) {?>
 	<tr>
 		<td><?php echo $resource['id'] ?></td>
-		<td>
+		<td colspan="2">
 			<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resource'), 'default', true) ?>/<?php echo $resource['id'] ?>">
-				<?php echo $resource['name'] ?></td>
+				<?php echo $resource['name'] ?>
 			</a>
 		</td>
-		<td style="text-align:right"><?php echo $resource['fixedprice'] ?></td>
+		<td style="text-align:right"><?php echo $resource['full_cost'] ?></td>
 		<td style="text-align:right"><?php echo $resource['amount'] ?></td>
-		<td style="text-align:right"><?php echo ($resource['fixedprice'] * $resource['amount']) ?></td>
+		<td style="text-align:right"><?php echo ($resource['full_cost'] * $resource['amount']) ?></td>
 	</tr>
-	<?php }?>
+	<?php 
+	if($resource['craftable'] == 1) { 
+		foreach($resource['components'] as $res_comp) {
+	?>
+	<tr>
+		<td><?php echo $res_comp['id'] ?></td>
+		<td style="width:10px;"></td>
+		<td colspan="1">
+			<a href="<?php echo $this->url(array('controller'=>'crafting', 'action'=>'resource'), 'default', true) ?>/<?php echo $res_comp['id'] ?>">
+				<?php echo $res_comp['name'] ?>
+			</a>
+		</td>
+		<td style="text-align:right"><?php echo $res_comp['fixedprice'] ?></td>
+		<td style="text-align:right"><?php echo $res_comp['amount'] ?></td>
+		<td style="text-align:right"><?php echo ($res_comp['full_cost']) ?></td>
+	</tr>		
+	<?php 
+		}
+	}?>	
+<?php }?>
 </table>
